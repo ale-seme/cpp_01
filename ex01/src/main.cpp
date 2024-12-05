@@ -1,9 +1,13 @@
 #include "Zombie.hpp"
 
-void    test_function(Zombie *test_zombie)
+void    test_function(Zombie *Zombies, int n_zombies)
 {
     
-    test_zombie->announce();
+    std::cout << n_zombies << std::endl;
+    for(int i = 0; i < n_zombies; i++)
+    {
+        Zombies[i].announce();
+    }
     std::cout << "Announcement from separate test funciton was successfull" << std::endl;
 }
 
@@ -11,15 +15,14 @@ int main(void)
 {
 
     try{
-    Zombie *Zombie_01 = newZombie("kamila");
-    Zombie_01->announce();
-    test_function(Zombie_01);
-    delete(Zombie_01);
+    int n_zombies = 5;
+    Zombie *Zombies = zombieHorde(n_zombies, "ARGHHH");
+    test_function(Zombies, n_zombies);
+    delete[](Zombies);
     }
     catch (const std::bad_alloc& e){
-        std::cerr << "Failed to allocate memory for a Zombie. Error:" << e.what() << std::endl;
+        std::cerr << "Failed to allocate memory for zombieHorde. Error:" << e.what() << std::endl;
         return 1;
     }
-    randomChump("Fra");
     return (0);
 }

@@ -9,8 +9,6 @@ class HumanA{
     std::string _name;
     Weapon& _currentWeapon;
 
-
-
     public:
     HumanA(const std::string& name, Weapon& weapon);
     void attack();

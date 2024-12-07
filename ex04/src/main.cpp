@@ -3,7 +3,7 @@
 #include <fstream>
 
 void    replaceSubstring(std::string& str, const std::string& from, const std::string& to)
-{
+{   
     size_t pos = 0;
     while((pos = str.find(from)) != std::string::npos)
     {
@@ -20,6 +20,11 @@ int main(int argc, char **argv)
         std::cerr << "Usage: " << argv[0] << " <filename> <search> <replace>" << std::endl;
         return (1);
     }
+    std::string search = argv[2];
+    if (search.empty()) {
+        std::cerr << "The search string cannot be empty." << std::endl;
+        return (1);
+    }
     std::ifstream fin(argv[1], std::ios::in);
     if (!fin.is_open())
     {
@@ -33,9 +38,9 @@ int main(int argc, char **argv)
         std::cerr << "Opening the output file failed!" << std::endl;
         return (1);
     }
-    std::string search = argv[2];
     std::string replace = argv[3];
     std::string line;
+    
     while(std::getline(fin, line))
     {
         replaceSubstring(line, search, replace);

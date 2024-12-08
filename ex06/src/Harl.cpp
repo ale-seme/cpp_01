@@ -18,24 +18,23 @@ void Harl::error ( void ){
     std::cout << "[ERROR]: This is unacceptable!" << std::endl;
 }
 
-void Harl::complain( std::string level ){
+void Harl::complain(Level level){
 
-//enum level {DEBUG, INFO, WARNING, ERROR};
-
-std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-typedef void (Harl::*HarlFn)();//just not to have to repeat all the time so it's a member funciton pointer
-
-HarlFn functions[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error}; //array of member funciton pointers
-for (int i = 0; i < 4; i++)
-    {
-        if (levels[i] == level)
-        {
-            for(int j = i; j < 4; j++)
-            {
-                (this->*functions[j])();
-            }
-            return;
-        }
+    switch(level){
+        case DEBUG:
+           debug();
+           /* fall through */
+        case INFO:
+            info();
+            /* fall through */
+        case WARNING:
+            warning();
+            /* fall through */
+        case ERROR:
+            error();
+            break;
+        default:
+            std::cout << "[ Probably complaning about insignificant problems ]" <<  std::endl;
     }
-    std::cout << "Not a coorect level" << std::endl;
+
 }

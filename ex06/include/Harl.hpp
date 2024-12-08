@@ -13,8 +13,8 @@ class Harl{
     void error( void );
 
     public:
-    enum level {DEBUG, INFO, WARNING, ERROR};
-    void complain( std::string level );
+    enum Level {DEBUG = 1, INFO, WARNING, ERROR};
+    void complain(Level level);
 };
 
 #endif

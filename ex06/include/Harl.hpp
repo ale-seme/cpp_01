@@ -17,4 +17,6 @@ class Harl{
     void complain(Level level);
 };
 
+Harl::Level parse_argument(std::string input);
+
 #endif

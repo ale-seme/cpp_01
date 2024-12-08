@@ -2,8 +2,6 @@
 
 void    test_function(Zombie *Zombies, int n_zombies)
 {
-    
-    std::cout << n_zombies << std::endl;
     for(int i = 0; i < n_zombies; i++)
     {
         Zombies[i].announce();

@@ -4,7 +4,7 @@ CC = g++
 
 INCLUDES = -I./include
 
-SRC =  main.cpp Zombie.cpp zombieHorde.cpp randomChump.cpp
+SRC =  main.cpp Zombie.cpp zombieHorde.cpp
 
 CFLAGS = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
 

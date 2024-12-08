@@ -38,3 +38,15 @@ void Harl::complain(Level level){
     }
 
 }
+
+Harl::Level parse_argument(std::string input){
+    if (input == "DEBUG")
+        return Harl::DEBUG;
+    if (input == "INFO")
+        return Harl::INFO;
+    if (input == "WARNING")
+        return Harl::WARNING;
+    if (input == "ERROR")
+        return Harl::ERROR;
+    throw(std::invalid_argument("Invalid level"));
+}

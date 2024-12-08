@@ -1,17 +1,6 @@
 #include <iostream>
-#include <string>
 #include <fstream>
-
-void    replaceSubstring(std::string& str, const std::string& from, const std::string& to)
-{   
-    size_t pos = 0;
-    while((pos = str.find(from)) != std::string::npos)
-    {
-        str.erase(pos, from.length());
-        str.insert(pos, to);
-        pos += to.length();
-    }
-}
+#include "replaceSubstring.hpp"
 
 int main(int argc, char **argv)
 {

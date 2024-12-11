@@ -6,7 +6,7 @@ INCLUDES = -I./include
 
 SRC =  main.cpp
 
-CFLAGS = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -std=c++11
 
 DIR_SRC = src
 DIR_OBJ = obj

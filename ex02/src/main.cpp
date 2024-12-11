@@ -17,12 +17,16 @@ And then:
 int main(void)
 {
 	std::string str = "HI THIS IS BRAIN";
-	const char	*stringPTR = str.c_str();
+	std::string *stringPTR = &str;
 	std::string& stringREF = str;
 
 	std::cout << "Memory address of the string variable: " << &str << std::endl;
-	std::cout << "Memory address held by stringPTR: "<< static_cast<const void*>(stringPTR) << std::endl;
+	std::cout << "Memory address held by stringPTR: "<< stringPTR << std::endl;
 	std::cout << "Memory address held by stringREF: " << &stringREF << std::endl;
+
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 
 	return (0);
 }

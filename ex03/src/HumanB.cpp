@@ -3,9 +3,6 @@
 HumanB::HumanB(const std::string& name) 
 : _name(name), _currentWeapon(nullptr) {}
 
-HumanB::HumanB(const std::string& name, Weapon& weapon) 
-: _name(name), _currentWeapon(&weapon) {}
-
 void HumanB::setWeapon(Weapon& weapon){
     _currentWeapon = &weapon;
 }

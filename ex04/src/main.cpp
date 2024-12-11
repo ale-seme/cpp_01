@@ -30,13 +30,18 @@ int main(int argc, char **argv)
     std::string replace = argv[3];
     std::string line;
     
-    while(std::getline(fin, line))
+    bool is_empty = true;
+	while(std::getline(fin, line))
     {
-        replaceSubstring(line, search, replace);
+        is_empty = false;
+		replaceSubstring(line, search, replace);
         file_output << line;
         if (!fin.eof())
             file_output << std::endl;
     }
+	if (is_empty){
+		std::cerr << "Created an empty replace file because the file input is empty" << std::endl;
+	}
     fin.close();
     file_output.close();
     return (0);
